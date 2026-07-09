@@ -3,24 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>技术支持</title>
+    <title>执徐网络科技 - 开发者支持中心</title>
     <style>
-        body { font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 600px; margin: 40px auto; padding: 0 20px; color: #333; }
-        h1 { color: #111; }
-        a { color: #007aff; text-decoration: none; }
+        :root {
+            --primary-color: #007aff;
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-sub: #86868b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* 统一的开发者/公司页头 */
+        .portal-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .company-logo {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+
+        .company-name {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .portal-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+        }
+
+        /* 顶层公共公告/全局支持卡片 */
+        .global-support-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 产品列表网格 - 支持无限追加 */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .app-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0,0,0,0.02);
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        /* App 图标通用样式 */
+        .app-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* 独立应用的个性化图标颜色 */
+        .icon-light-sign { background: linear-gradient(135deg, #ff2d55, #ff9500); }
+        .icon-generic-app { background: linear-gradient(135deg, #007aff, #5856d6); }
+
+        .app-info {
+            flex-grow: 1;
+        }
+
+        .app-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .app-desc {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+        }
+
+        /* 独立应用的行动按钮组 */
+        .app-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn-primary { background-color: #f2f2f7; color: var(--primary-color); }
+        .btn-primary:hover { background-color: #e5e5ea; }
+        
+        .btn-secondary { background-color: #fff; color: #48484a; border: 1px solid #d1d1d6; }
+        .btn-secondary:hover { background-color: #f5f5f7; }
+
+        @media (max-width: 540px) {
+            .app-card { flex-direction: column; gap: 16px; padding: 20px; }
+            .app-icon { width: 60px; height: 60px; font-size: 1.5rem; }
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-top: 60px;
+        }
     </style>
 </head>
 <body>
-    <h1>欢迎使用 </h1>
-    <p>致力于为您提供高效、安全的便捷体验。</p>
-    
-    <h2>技术支持与反馈</h2>
-    <p>如果您在使用过程中遇到任何问题，或有任何建议，欢迎通过以下方式联系我：</p>
-    <ul>
-        <li>电子邮箱：<a href="mailto:jc_leblanc@163.com">jc_leblanc@163.com</a></li>
-    </ul>
 
-    <hr>
-    <p><a href="privacy.html">👉 查看《隐私政策》</a></p>
+<div class="container">
+    
+    <div class="portal-header">
+        <div class="company-logo">🏢</div>
+        <h1 class="company-name">执徐网络科技</h1>
+        <p class="portal-subtitle">应用产品中心 与 技术支持服务台</p>
+    </div>
+
+    <div class="global-support-card">
+        <h2 class="section-title">💬 客户服务与技术支持</h2>
+        <p style="color: #48484a; font-size: 0.95rem;">
+            欢迎来到我们的技术支持中心。如果您在使用我们旗下的任何一款移动应用程序时遇到闪退、Bug 或有任何功能改进建议，请直接点击对应产品下方的<strong>“联系支持”</strong>按钮向我们发送邮件。我们通常会在 24 小时内回复您的反馈。
+        </p>
+    </div>
+
+    <div class="global-support-card" style="background: transparent; box-shadow: none; border: none; padding: 0;">
+        <h2 class="section-title">📱 我们的应用产品</h2>
+        
+        <div class="apps-grid">
+            
+            <div class="app-card">
+                <div class="app-icon icon-light-sign">LED</div>
+                <div class="app-info">
+                    <h3 class="app-title">手持灯牌</h3>
+                    <p class="app-desc">一款纯本地运行、无广告的便携大屏全屏滚动弹幕工具，适用于接机、应援、摆摊及各类打Call场景。</p>
+                    <div class="app-actions">
+                        <a href="mailto:jc_leblanc@163.com?subject=手持灯牌-技术支持反馈" class="btn btn-primary">✉️ 联系支持</a>
+                        <a href="HandheldLightSignPrivacy.html" class="btn btn-secondary">🛡️ 隐私政策</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 青岛执徐网络科技有限公司. All rights reserved.</p>
+    </div>
+</div>
+
 </body>
 </html>
