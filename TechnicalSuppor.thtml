@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术支持</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; max-width: 600px; margin: 40px auto; padding: 0 20px; color: #333; }
+        h1 { color: #111; }
+        a { color: #007aff; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <h1>欢迎使用</h1>
+    <p>致力于为您提供高效、安全的便捷体验。</p>
+    
+    <h2>技术支持与反馈</h2>
+    <p>如果您在使用过程中遇到任何问题，或有任何建议，欢迎通过以下方式联系我：</p>
+    <ul>
+        <li>电子邮箱：<a href="mailto:jc_leblanc@163.com">jc_leblanc@163.com</a></li>
+    </ul>
+
+    <hr>
+    <p><a href="privacy.html">👉 查看《隐私政策》</a></p>
+</body>
+</html>
